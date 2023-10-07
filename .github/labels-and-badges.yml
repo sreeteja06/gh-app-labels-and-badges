@@ -1,0 +1,17 @@
+jira_url: https://supercharged-dev.atlassian.net
+pr_size_config:
+  xs:
+    lines: 10
+  s:
+    lines: 30
+  m:
+    lines: 100
+  l:
+    lines: 500
+  xl:
+    lines: 1000
+  xxl:
+    lines: 10000
+
+release_branch: main
+enable_change_notes: true
