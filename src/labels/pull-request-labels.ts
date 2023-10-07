@@ -73,6 +73,12 @@ const assignPullRequestLabels = async (context: any, existingLabels: any, config
         labelsToDelete.push(Label.PR_CONFLICT);
     }
 
+
+    context.log.debug(`Pull Request Title: ${pullRequestTitle}`);
+    context.log.debug(`Adding Labels: ${labelsToAdd}`);
+    context.log.debug(`Deleting Labels: ${labelsToDelete}`);
+    context.log.debug(`Existing Labels: ${existingLabels}`);
+
     await addLabelsOnIssue(context, labelsToAdd, labelsToDelete, existingLabels)
 }
 
