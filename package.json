@@ -1,6 +1,6 @@
 {
   "name": "gh-app-labels-and-badges",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "private": true,
   "description": "Automatically add github labels and badges",
   "author": "Sree Teja",

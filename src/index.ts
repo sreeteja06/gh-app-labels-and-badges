@@ -27,27 +27,27 @@ const pullRequestHandler = async (context: any, skipChangeNotes: boolean) => {
 
 export = (app: Probot) => {
     app.on('pull_request.opened', async (context) => {
-        console.log('pull_request.opened')
+        context.log.info('pull_request.opened')
         await pullRequestHandler(context, false);
     });
 
     app.on('pull_request.edited', async (context) => {
-        console.log('pull_request.edited')
+        context.log.info('pull_request.edited')
         await pullRequestHandler(context, true);
     });
 
     app.on('pull_request.reopened', async (context) => {
-        console.log('pull_request.reopened')
+        context.log.info('pull_request.reopened')
         await pullRequestHandler(context, true);
     });
 
     app.on('pull_request.synchronize', async (context) => {
-        console.log('pull_request.synchronize')
+        context.log.info('pull_request.synchronize')
         await pullRequestHandler(context, false);
     });
 
     app.on('pull_request_review.submitted', async (context) => {
-        console.log('pull_request_review.submitted')
+        context.log.info('pull_request_review.submitted')
         const { existingLabels } = await preHook(context);
         await assignReviewLabels(context, existingLabels);
     });
