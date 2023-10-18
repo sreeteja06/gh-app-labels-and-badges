@@ -21,7 +21,7 @@ export const addChangeNotes = async (context: any, config: Config) => {
     let body = '';
 
     if (jiraTicketNumberString) {
-        body = `## Jira Ticket \n [${jiraTicketNumberString}](https://9and9.atlassian.net/browse/${jiraTicketNumberString})\n\n`;
+        body = `## Jira Ticket \n [${jiraTicketNumberString}](${config.jiraUrl}/browse/${jiraTicketNumberString})\n\n`;
     }
 
     body += `## Change Notes\n\n${changeNotes}`;
