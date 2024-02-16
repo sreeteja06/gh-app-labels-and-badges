@@ -59,6 +59,11 @@ const assignPullRequestLabels = async (context: any, existingLabels: any, config
     // Example: ABCD-1234: This is a Jira Ticket
     // Example: ABCD-12345:This is a Jira Ticket
     if (!pullRequestTitle.match(/([A-Z]{1,4}-\d{1,5})/g) && !pullRequestFromBranch.match(/([A-Z]{1,4}-\d{1,5})/g)) {
+        if (config.jiraUrl === '') {
+            // No Jira instance has been provided -> no label neccecary
+            return;
+        }
+        
         labelsToAdd.push(Label.NOJIRA);
     }
 
